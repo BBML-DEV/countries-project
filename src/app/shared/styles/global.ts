@@ -9,8 +9,9 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body{
-        background-color: ${({theme}) => theme.colors["light-mode-background"]};
-        color: ${({theme}) => theme.colors['light-mode-text']};
+        background-color: ${({ theme }) =>
+          theme.colors['light-mode-background']};
+        color: ${({ theme }) => theme.colors['light-mode-text']};
         -webkit-font-smoothing: antialiased;
     }
 
@@ -32,5 +33,6 @@ export const GlobalStyles = createGlobalStyle`
     button{
         border: none;
         cursor: pointer;
+        background: none;
     }
 `
