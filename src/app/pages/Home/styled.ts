@@ -3,7 +3,7 @@ import { styled } from 'styled-components'
 export const HomeContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: green;
+  gap: 2rem;
 
   .container {
     margin-left: auto;

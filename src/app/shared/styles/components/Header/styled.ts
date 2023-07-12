@@ -4,10 +4,9 @@ export const HeaderContainer = styled.header`
   width: 100%;
   padding: 2rem 0rem;
   background-color: ${({ theme }) => theme.colors.white};
-  -moz-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
-  position: fixed;
+  -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
 `
 
 export const HeaderContent = styled.div`
