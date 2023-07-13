@@ -8,6 +8,9 @@ export const CardContainer = styled.div`
 `
 export const BannerContainer = styled.div`
   img {
+    object-fit: cover;
+    height: 10rem;
+    overflow: hidden;
     width: 100%;
   }
 `
