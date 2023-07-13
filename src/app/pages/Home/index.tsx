@@ -1,6 +1,6 @@
-import { Header } from '../../shared/styles/components/Header'
-import { Inputs } from '../../shared/styles/components/Inputs'
-import { List } from '../../shared/styles/components/List'
+import { Header } from '../../shared/components/Header'
+import { Inputs } from '../../shared/components/Inputs'
+import { List } from '../../shared/components/List'
 import { HomeContainer } from './styled'
 
 export const Home = () => {
