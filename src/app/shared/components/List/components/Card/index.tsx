@@ -1,25 +1,34 @@
 import { BannerContainer, CardContainer, InfoContainer } from './styled'
 import pais from '../../../../../../assets/jo.png'
+import { populationFormatted } from '../../../../utils/formatted'
 
-export const Card = () => {
+interface CardPostProps {
+  name: string
+  flag: string
+  population: number
+  region: string
+  capital: string
+}
+
+export const Card = ({ data }: CardPostProps) => {
   return (
     <CardContainer>
       <BannerContainer>
-        <img src={pais} alt="" />
+        <img src={data.flag} alt="" />
       </BannerContainer>
       <InfoContainer>
-        <h2>Jordânia</h2>
+        <h2>{data.name}</h2>
         <div>
           <span>Population:</span>
-          <p>334.300</p>
+          <p>{populationFormatted(data.population)}</p>
         </div>
         <div>
           <span>Region:</span>
-          <p>Americanas</p>
+          <p>{data.region}</p>
         </div>
         <div>
           <span>Capital:</span>
-          <p>Brasilia</p>
+          <p>{data.capital}</p>
         </div>
       </InfoContainer>
     </CardContainer>
