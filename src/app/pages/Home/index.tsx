@@ -1,5 +1,6 @@
 import { Header } from '../../shared/styles/components/Header'
 import { Inputs } from '../../shared/styles/components/Inputs'
+import { List } from '../../shared/styles/components/List'
 import { HomeContainer } from './styled'
 
 export const Home = () => {
@@ -7,6 +8,7 @@ export const Home = () => {
     <HomeContainer>
       <Header />
       <Inputs />
+      <List />
     </HomeContainer>
   )
 }
