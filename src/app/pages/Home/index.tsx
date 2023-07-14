@@ -31,7 +31,7 @@ export const Home = () => {
   return (
     <HomeContainer>
       <Header />
-      <Inputs />
+      <Inputs data={data} />
       <List data={data} />
     </HomeContainer>
   )
