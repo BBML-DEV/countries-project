@@ -6,7 +6,7 @@ import { InputsContainer } from './styled'
 type InputsProps = {
   data: CoutriesDataProps[]
   optionValue: string
-  setOptinValue: (value: string) => void
+  setOptionValue: (value: string) => void
   inputValue: string
   setInputValue: (value: string) => void
 }
@@ -14,14 +14,14 @@ type InputsProps = {
 export const Inputs = ({
   data,
   optionValue,
-  setOptinValue,
+  setOptionValue,
   inputValue,
   setInputValue,
 }: InputsProps) => {
   return (
     <InputsContainer className="container">
       <Input inputValue={inputValue} setInputValue={setInputValue} />
-      <Select options={data} value={optionValue} setValue={setOptinValue} />
+      <Select options={data} setOptionValue={setOptionValue} />
     </InputsContainer>
   )
 }

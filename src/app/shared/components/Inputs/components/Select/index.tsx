@@ -3,16 +3,13 @@ import { SelectContainer } from './styled'
 
 type OptionsProps = {
   options: CoutriesDataProps[]
-  value: string
-  setValue: (value: string) => void
+  setOptionValue: React.Dispatch<React.SetStateAction<string>>
 }
 
-export const Select = ({ options, value, setValue }: OptionsProps) => {
+export const Select = ({ options, setOptionValue }: OptionsProps) => {
   function handleGetValue({ target }: any) {
-    setValue(target.value)
+    setOptionValue(target.value)
   }
-
-  console.log(value)
 
   return (
     <SelectContainer>

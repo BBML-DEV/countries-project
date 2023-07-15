@@ -10,7 +10,6 @@ type TextInputProps = {
 export const Input = ({ inputValue, setInputValue }: TextInputProps) => {
   const getInputTextValue = ({ target }: any) => {
     setInputValue(target.value)
-    console.log(target.value)
   }
 
   return (

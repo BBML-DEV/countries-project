@@ -34,11 +34,11 @@ export const Home = () => {
       <Inputs
         data={data}
         optionValue={optionValue}
-        setOptinValue={setOptionValue}
+        setOptionValue={setOptionValue}
         inputValue={inputValue}
         setInputValue={setInputValue}
       />
-      <List data={data} />
+      <List data={data} optionValue={optionValue} inputValue={inputValue} />
     </HomeContainer>
   )
 }
