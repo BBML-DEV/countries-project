@@ -7,12 +7,20 @@ type InputsProps = {
   data: CoutriesDataProps[]
   optionValue: string
   setOptinValue: (value: string) => void
+  inputValue: string
+  setInputValue: (value: string) => void
 }
 
-export const Inputs = ({ data, optionValue, setOptinValue }: InputsProps) => {
+export const Inputs = ({
+  data,
+  optionValue,
+  setOptinValue,
+  inputValue,
+  setInputValue,
+}: InputsProps) => {
   return (
     <InputsContainer className="container">
-      <Input />
+      <Input inputValue={inputValue} setInputValue={setInputValue} />
       <Select options={data} value={optionValue} setValue={setOptinValue} />
     </InputsContainer>
   )

@@ -16,6 +16,7 @@ export interface CoutriesDataProps {
 export const Home = () => {
   const [data, setData] = useState<Array<CoutriesDataProps>>([])
   const [optionValue, setOptionValue] = useState('')
+  const [inputValue, setInputValue] = useState('')
 
   async function getApiData() {
     const response = await fetch('https://restcountries.com/v2/all')
@@ -34,6 +35,8 @@ export const Home = () => {
         data={data}
         optionValue={optionValue}
         setOptinValue={setOptionValue}
+        inputValue={inputValue}
+        setInputValue={setInputValue}
       />
       <List data={data} />
     </HomeContainer>
