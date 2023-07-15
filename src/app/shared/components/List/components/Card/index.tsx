@@ -1,5 +1,4 @@
 import { BannerContainer, CardContainer, InfoContainer } from './styled'
-import pais from '../../../../../../assets/jo.png'
 import { populationFormatted } from '../../../../utils/formatted'
 
 interface CardPostProps {

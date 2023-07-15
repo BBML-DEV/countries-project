@@ -15,14 +15,13 @@ export interface CoutriesDataProps {
 
 export const Home = () => {
   const [data, setData] = useState<Array<CoutriesDataProps>>([])
+  const [optionValue, setOptionValue] = useState('')
 
   async function getApiData() {
     const response = await fetch('https://restcountries.com/v2/all')
     const json = await response.json()
     setData(json)
   }
-
-  console.log(data)
 
   useEffect(() => {
     getApiData()
@@ -31,7 +30,11 @@ export const Home = () => {
   return (
     <HomeContainer>
       <Header />
-      <Inputs data={data} />
+      <Inputs
+        data={data}
+        optionValue={optionValue}
+        setOptinValue={setOptionValue}
+      />
       <List data={data} />
     </HomeContainer>
   )
