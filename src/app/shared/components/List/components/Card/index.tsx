@@ -1,12 +1,9 @@
 import { BannerContainer, CardContainer, InfoContainer } from './styled'
 import { populationFormatted } from '../../../../utils/formatted'
+import { CoutriesDataProps } from '../../../../../pages/Home'
 
-interface CardPostProps {
-  name: string
-  flag: string
-  population: number
-  region: string
-  capital: string
+type CardPostProps = {
+  data: CoutriesDataProps
 }
 
 export const Card = ({ data }: CardPostProps) => {

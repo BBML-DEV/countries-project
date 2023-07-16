@@ -8,7 +8,7 @@ type DataPros = {
 }
 export const List = ({ data, optionValue }: DataPros) => {
   const teste =
-    optionValue !== 'Filter by Region'
+    optionValue !== ''
       ? data.filter((item) => item.region.includes(optionValue))
       : []
 
