@@ -13,11 +13,11 @@ export const Select = ({ setOptionValue }: OptionsProps) => {
     <SelectContainer>
       <select name="select" onChange={handleGetValue}>
         <option selected>Filter by Region</option>
-        <option value="africa">Africa</option>
-        <option value="asia">Ásia</option>
-        <option value="americas">Americas</option>
-        <option value="europa">Europa</option>
-        <option value="oceania">Oceania</option>
+        <option value="Africa">Africa</option>
+        <option value="Asia">Ásia</option>
+        <option value="Americas">Americas</option>
+        <option value="Europe">Europa</option>
+        <option value="Oceania">Oceania</option>
       </select>
     </SelectContainer>
   )

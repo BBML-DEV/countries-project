@@ -7,18 +7,19 @@ type DataPros = {
   optionValue: string
 }
 export const List = ({ data, optionValue }: DataPros) => {
-  const teste =
-    optionValue !== ''
-      ? data.filter((item) => item.region.includes(optionValue))
-      : []
+  const filterListOfRegions = data.filter((item) => item.region === optionValue)
 
-  console.log(teste)
+  console.log(filterListOfRegions)
 
   return (
     <ListContainer className="container">
-      {data.map((data) => {
-        return <Card key={data.id} data={data} />
-      })}
+      {optionValue.length > 0
+        ? filterListOfRegions.map((item) => {
+            return <Card key={item.id} data={item} />
+          })
+        : data.map((item) => {
+            return <Card key={item.id} data={item} />
+          })}
     </ListContainer>
   )
 }
