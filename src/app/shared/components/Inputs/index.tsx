@@ -13,7 +13,6 @@ type InputsProps = {
 
 export const Inputs = ({
   data,
-  optionValue,
   setOptionValue,
   inputValue,
   setInputValue,
