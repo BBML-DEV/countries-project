@@ -12,6 +12,8 @@ export const Input = ({ inputValue, setInputValue }: TextInputProps) => {
     setInputValue(target.value)
   }
 
+  console.log(inputValue)
+
   return (
     <InputTextContainer>
       <FontAwesomeIcon icon={faMagnifyingGlass} />

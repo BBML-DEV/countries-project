@@ -5,6 +5,7 @@ import { ListContainer } from './styled'
 type DataPros = {
   data: CoutriesDataProps[]
   optionValue: string
+  inputValue: string
 }
 
 enum ContinentOptions {
@@ -19,12 +20,18 @@ const isOptionValid = (option: string): option is ContinentOptions => {
   return Object.values(ContinentOptions).includes(option as ContinentOptions)
 }
 
-export const List = ({ data, optionValue }: DataPros) => {
+export const List = ({ data, optionValue, inputValue }: DataPros) => {
   const filterListOfRegions = data.filter((item) => item.region === optionValue)
+
+  const inputFilter = data.filter((item) =>
+    item.name.toLowerCase().includes(inputValue.toLowerCase()),
+  )
 
   return (
     <ListContainer className="container">
-      {isOptionValid(optionValue)
+      {inputValue.length > 0
+        ? inputFilter.map((item) => <Card key={item.id} data={item} />)
+        : isOptionValid(optionValue)
         ? filterListOfRegions.map((item) => <Card key={item.id} data={item} />)
         : data.map((item) => <Card key={item.id} data={item} />)}
     </ListContainer>
