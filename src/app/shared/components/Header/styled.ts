@@ -19,6 +19,7 @@ export const HeaderContent = styled.div`
     display: flex;
     align-items: center;
     flex-direction: row;
+    color: ${({ theme }) => theme.colors.text};
 
     gap: 0.5rem;
 

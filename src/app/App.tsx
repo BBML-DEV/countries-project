@@ -1,6 +1,6 @@
 import { ThemeProvider } from 'styled-components'
 import { GlobalStyles } from './shared/styles/global'
-import { defaultTheme } from './shared/styles/theme/defaultTheme'
+import { darkTheme, defaultTheme } from './shared/styles/theme/defaultTheme'
 import { BrowserRouter } from 'react-router-dom'
 import { Router } from './shared/router'
 

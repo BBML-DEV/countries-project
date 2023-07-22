@@ -30,14 +30,14 @@ export const InfoContainer = styled.div`
     gap: 0.5rem;
 
     span {
-      color: ${({ theme }) => theme.colors['light-mode-input']};
+      color: ${({ theme }) => theme.colors.input};
       font-size: ${({ theme }) => theme.fontSize.defailtPage};
       font-weight: 800;
     }
 
     p {
       font-size: ${({ theme }) => theme.fontSize.homeItens};
-      color: ${({ theme }) => theme.colors['light-mode-input']};
+      color: ${({ theme }) => theme.colors.input};
       font-weight: 300;
     }
   }

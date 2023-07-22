@@ -1,7 +1,10 @@
-import React from 'react'
+import { SingleCardContainer } from './styled'
 
-const SingleCard = () => {
-  return <div>SingleCard</div>
+export const SingleCard = () => {
+  return (
+    <SingleCardContainer className="container">
+      <h1>teste</h1>
+      <h2>aaaaaaaaaa</h2>
+    </SingleCardContainer>
+  )
 }
-
-export default SingleCard

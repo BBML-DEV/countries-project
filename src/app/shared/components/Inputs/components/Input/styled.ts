@@ -12,18 +12,19 @@ export const InputTextContainer = styled.div`
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
   svg {
-    color: ${({ theme }) => theme.colors['light-mode-input']};
+    color: ${({ theme }) => theme.colors.input};
   }
 
   input {
     border: none;
-    background-color: none;
+    background-color: transparent;
     width: 100%;
+    color: ${({ theme }) => theme.colors.text};
   }
 
   input::placeholder {
     font-size: ${({ theme }) => theme.fontSize.defailtPage};
-    color: ${({ theme }) => theme.colors['light-mode-input']};
+    color: ${({ theme }) => theme.colors.text};
   }
   input:focus {
     outline: none;

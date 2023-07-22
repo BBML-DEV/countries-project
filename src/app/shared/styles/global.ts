@@ -9,9 +9,8 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     body{
-        background-color: ${({ theme }) =>
-          theme.colors['light-mode-background']};
-        color: ${({ theme }) => theme.colors['light-mode-text']};
+        background-color: ${({ theme }) => theme.colors.background};
+        color: ${({ theme }) => theme.colors.text};
         -webkit-font-smoothing: antialiased;
     }
 
