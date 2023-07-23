@@ -7,6 +7,8 @@ interface Coutries {
   setOptionValue: React.Dispatch<React.SetStateAction<string>>
   inputValue: string
   setInputValue: React.Dispatch<React.SetStateAction<string>>
+  isDarkTheme: boolean
+  setIsDarkTheme: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 interface ChildrenContextProps {
@@ -19,6 +21,7 @@ export const CoutriesProvider = ({ children }: ChildrenContextProps) => {
   const [data, setData] = useState<Array<CoutriesDataProps>>([])
   const [optionValue, setOptionValue] = useState('')
   const [inputValue, setInputValue] = useState('')
+  const [isDarkTheme, setIsDarkTheme] = useState(false)
 
   async function getApiData() {
     const response = await fetch('https://restcountries.com/v2/all')
@@ -38,6 +41,8 @@ export const CoutriesProvider = ({ children }: ChildrenContextProps) => {
         optionValue,
         setInputValue,
         setOptionValue,
+        isDarkTheme,
+        setIsDarkTheme,
       }}
     >
       {children}

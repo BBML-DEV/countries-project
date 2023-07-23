@@ -1,18 +1,14 @@
 import { InputTextContainer } from './styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { useCoutries } from '../../../../hook/useCoutries'
 
-type TextInputProps = {
-  inputValue: string
-  setInputValue: React.Dispatch<React.SetStateAction<string>>
-}
-
-export const Input = ({ inputValue, setInputValue }: TextInputProps) => {
+export const Input = () => {
   const getInputTextValue = ({ target }: any) => {
     setInputValue(target.value)
   }
 
-  console.log(inputValue)
+  const { inputValue, setInputValue } = useCoutries()
 
   return (
     <InputTextContainer>

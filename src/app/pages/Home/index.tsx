@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { Inputs } from '../../shared/components/Inputs'
 import { List } from '../../shared/components/List'
 import { HomeContainer } from './styled'
@@ -13,30 +12,10 @@ export interface CoutriesDataProps {
 }
 
 export const Home = () => {
-  const [data, setData] = useState<Array<CoutriesDataProps>>([])
-  const [optionValue, setOptionValue] = useState('')
-  const [inputValue, setInputValue] = useState('')
-
-  async function getApiData() {
-    const response = await fetch('https://restcountries.com/v2/all')
-    const json = await response.json()
-    setData(json)
-  }
-
-  useEffect(() => {
-    getApiData()
-  }, [])
-
   return (
     <HomeContainer>
-      <Inputs
-        data={data}
-        optionValue={optionValue}
-        setOptionValue={setOptionValue}
-        inputValue={inputValue}
-        setInputValue={setInputValue}
-      />
-      <List data={data} optionValue={optionValue} inputValue={inputValue} />
+      <Inputs />
+      <List />
     </HomeContainer>
   )
 }

@@ -1,10 +1,9 @@
+import { useCoutries } from '../../../../hook/useCoutries'
 import { SelectContainer } from './styled'
 
-type OptionsProps = {
-  setOptionValue: React.Dispatch<React.SetStateAction<string>>
-}
+export const Select = () => {
+  const { setOptionValue } = useCoutries()
 
-export const Select = ({ setOptionValue }: OptionsProps) => {
   function handleGetValue({ target }: any) {
     setOptionValue(target.value)
   }

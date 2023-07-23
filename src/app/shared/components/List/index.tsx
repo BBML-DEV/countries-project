@@ -1,12 +1,6 @@
-import { CoutriesDataProps } from '../../../pages/Home'
+import { useCoutries } from '../../hook/useCoutries'
 import { Card } from './components/Card'
 import { ListContainer } from './styled'
-
-type DataPros = {
-  data: CoutriesDataProps[]
-  optionValue: string
-  inputValue: string
-}
 
 enum ContinentOptions {
   Asia = 'Asia',
@@ -20,7 +14,9 @@ const isOptionValid = (option: string): option is ContinentOptions => {
   return Object.values(ContinentOptions).includes(option as ContinentOptions)
 }
 
-export const List = ({ data, optionValue, inputValue }: DataPros) => {
+export const List = () => {
+  const { inputValue, data, optionValue } = useCoutries()
+
   const filterListOfRegions = data.filter((item) => item.region === optionValue)
 
   const inputFilter = data.filter((item) =>
