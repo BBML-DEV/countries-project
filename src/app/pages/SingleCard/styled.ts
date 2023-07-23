@@ -1,5 +1,7 @@
 import { styled } from 'styled-components'
 
 export const SingleCardContainer = styled.div`
-  background-color: red;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 `

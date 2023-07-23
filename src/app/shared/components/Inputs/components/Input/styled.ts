@@ -7,7 +7,7 @@ export const InputTextContainer = styled.div`
   width: 40%;
   padding: 1rem;
   gap: 0.5rem;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.elements};
   border-radius: 5px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 

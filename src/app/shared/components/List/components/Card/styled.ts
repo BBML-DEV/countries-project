@@ -2,7 +2,7 @@ import { styled } from 'styled-components'
 
 export const CardContainer = styled.div`
   width: 260px;
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: ${({ theme }) => theme.colors.elements};
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `

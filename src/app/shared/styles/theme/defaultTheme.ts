@@ -1,6 +1,6 @@
 export const defaultTheme = {
   colors: {
-    'dark-blue': '#2b3945',
+    elements: '#fafafa',
     text: '	#111517',
     input: '#858585',
     background: '#fafafa',
@@ -14,7 +14,7 @@ export const defaultTheme = {
 
 export const darkTheme = {
   colors: {
-    'dark-blue': '#2b3945',
+    elements: '#2b3945',
     background: '#202c37',
     text: '	#ffffff',
   },
