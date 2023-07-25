@@ -1,9 +1,9 @@
 import { BannerContainer, CardContainer, InfoContainer } from './styled'
 import { populationFormatted } from '../../../../utils/formatted'
-import { CoutriesDataProps } from '../../../../../pages/Home'
+import { CountriesDataProps } from '../../../../../pages/Home'
 
 type CardPostProps = {
-  data: CoutriesDataProps
+  data: CountriesDataProps
 }
 
 export const Card = ({ data }: CardPostProps) => {

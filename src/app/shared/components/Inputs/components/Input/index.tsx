@@ -1,14 +1,14 @@
 import { InputTextContainer } from './styled'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { useCoutries } from '../../../../hook/useCoutries'
+import { useCountries } from '../../../../hook/useCountries'
 
 export const Input = () => {
   const getInputTextValue = ({ target }: any) => {
     setInputValue(target.value)
   }
 
-  const { inputValue, setInputValue } = useCoutries()
+  const { inputValue, setInputValue } = useCountries()
 
   return (
     <InputTextContainer>

@@ -2,14 +2,14 @@ import { Inputs } from '../../shared/components/Inputs'
 import { List } from '../../shared/components/List'
 import { HomeContainer } from './styled'
 
-export interface CoutriesDataProps {
+export interface CountriesDataProps {
   id: number
   name: string
   flag: string
   population: number
   region: string
   capital: string
-  code: string
+  alpha2Code: string
 }
 
 export const Home = () => {

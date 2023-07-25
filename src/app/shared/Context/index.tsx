@@ -1,26 +1,26 @@
 import { ReactNode, createContext, useEffect, useState } from 'react'
-import { CoutriesDataProps } from '../../pages/Home'
+import { CountriesDataProps } from '../../pages/Home'
 import { api } from '../libs/axios'
 
-export interface Coutries {
-  data: CoutriesDataProps[]
+export interface Countries {
+  data: CountriesDataProps[]
   optionValue: string
   setOptionValue: React.Dispatch<React.SetStateAction<string>>
   inputValue: string
   setInputValue: React.Dispatch<React.SetStateAction<string>>
   isDarkTheme: boolean
   setIsDarkTheme: React.Dispatch<React.SetStateAction<boolean>>
-  getSingleCoutrie: (name: string) => Promise<any>
+  getSingleCountrie: (alpha2Code: string) => Promise<any>
 }
 
 interface ChildrenContextProps {
   children: ReactNode
 }
 
-export const CoutriesContext = createContext({} as Coutries)
+export const CountriesContext = createContext({} as Countries)
 
-export const CoutriesProvider = ({ children }: ChildrenContextProps) => {
-  const [data, setData] = useState<Array<CoutriesDataProps>>([])
+export const CountriesProvider = ({ children }: ChildrenContextProps) => {
+  const [data, setData] = useState<Array<CountriesDataProps>>([])
   const [optionValue, setOptionValue] = useState('')
   const [inputValue, setInputValue] = useState('')
   const [isDarkTheme, setIsDarkTheme] = useState(false)
@@ -31,8 +31,8 @@ export const CoutriesProvider = ({ children }: ChildrenContextProps) => {
     setData(json)
   }
 
-  async function getSingleCoutrie(name: string) {
-    const response = await api.get(`${name}`)
+  async function getSingleCountrie(alpha2Code: string) {
+    const response = await api.get(`${alpha2Code}`)
     return response.data
   }
 
@@ -41,7 +41,7 @@ export const CoutriesProvider = ({ children }: ChildrenContextProps) => {
   }, [])
 
   return (
-    <CoutriesContext.Provider
+    <CountriesContext.Provider
       value={{
         data,
         inputValue,
@@ -50,10 +50,10 @@ export const CoutriesProvider = ({ children }: ChildrenContextProps) => {
         setOptionValue,
         isDarkTheme,
         setIsDarkTheme,
-        getSingleCoutrie,
+        getSingleCountrie,
       }}
     >
       {children}
-    </CoutriesContext.Provider>
+    </CountriesContext.Provider>
   )
 }

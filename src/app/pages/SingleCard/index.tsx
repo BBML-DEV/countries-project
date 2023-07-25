@@ -3,11 +3,11 @@ import { ButtonBack } from './components/ButtonBack'
 import { ContentCoutries } from './components/ContentCoutries'
 import { SingleCardContainer } from './styled'
 import { useCallback, useState, useEffect } from 'react'
-import { useCoutries } from '../../shared/hook/useCoutries'
-import { Coutries } from '../../shared/Context'
-import { CoutriesDataProps } from '../Home'
+import { useCountries } from '../../shared/hook/useCountries'
+import { Countries } from '../../shared/Context'
+import { CountriesDataProps } from '../Home'
 
-export interface SinglePostProps extends CoutriesDataProps {
+export interface SinglePostProps extends CountriesDataProps {
   nativeName: string
   subregion: string
   topLevelDomain: string[]
@@ -17,30 +17,30 @@ export interface SinglePostProps extends CoutriesDataProps {
 }
 
 export const SingleCard = () => {
-  const [coutrieCardInfo, setCoutrieCardInfo] = useState<SinglePostProps>(
+  const [countrieCardInfo, setCountrieCardInfo] = useState<SinglePostProps>(
     {} as SinglePostProps,
   )
 
-  const { name } = useParams()
+  const { alpha2Code } = useParams()
 
-  const { getSingleCoutrie } = useCoutries() as unknown as Coutries
+  const { getSingleCountrie } = useCountries() as unknown as Countries
 
-  const getCoutrie = useCallback(async () => {
-    const coutrie = await getSingleCoutrie(name)
+  const getCountrie = useCallback(async () => {
+    const countrie = await getSingleCountrie(alpha2Code)
 
-    setCoutrieCardInfo(coutrie)
-  }, [getSingleCoutrie, name])
+    setCountrieCardInfo(countrie)
+  }, [getSingleCountrie, alpha2Code])
 
   useEffect(() => {
-    getCoutrie()
-  }, [getCoutrie, name])
+    getCountrie()
+  }, [getCountrie, alpha2Code])
 
-  console.log(coutrieCardInfo)
+  console.log(countrieCardInfo)
 
   return (
     <SingleCardContainer className="container">
       <ButtonBack />
-      <ContentCoutries coutrie={coutrieCardInfo} />
+      <ContentCoutries countrie={countrieCardInfo} />
     </SingleCardContainer>
   )
 }

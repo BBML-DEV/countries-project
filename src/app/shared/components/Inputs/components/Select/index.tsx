@@ -1,8 +1,8 @@
-import { useCoutries } from '../../../../hook/useCoutries'
+import { useCountries } from '../../../../hook/useCountries'
 import { SelectContainer } from './styled'
 
 export const Select = () => {
-  const { setOptionValue } = useCoutries()
+  const { setOptionValue } = useCountries()
 
   function handleGetValue({ target }: any) {
     setOptionValue(target.value)

@@ -40,6 +40,9 @@ export const InfoDataContainer = styled.div`
 
   ul li {
     padding: 0.3rem 0rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
 
     span {
       color: ${({ theme }) => theme.colors.text};
@@ -59,16 +62,19 @@ export const BadgeContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1rem;
+  flex-wrap: wrap;
+  width: 280px;
+  gap: 0.5rem;
 `
 
 export const Badge = styled.div`
   display: flex;
   justify-content: center;
-  width: 100px;
+  width: 60px;
   border-radius: 5px;
   font-size: ${({ theme }) => theme.fontSize.homeItens};
   background-color: ${({ theme }) => theme.colors.elements};
   color: ${({ theme }) => theme.colors.text};
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-size: 12px;
 `

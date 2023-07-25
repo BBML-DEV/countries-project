@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './app/App.tsx'
-import { CoutriesProvider } from './app/shared/Context/index.tsx'
+import { CountriesProvider } from './app/shared/Context/index.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <CoutriesProvider>
+    <CountriesProvider>
       <App />
-    </CoutriesProvider>
+    </CountriesProvider>
   </React.StrictMode>,
 )

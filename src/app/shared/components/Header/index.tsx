@@ -1,10 +1,10 @@
 import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { HeaderContainer, HeaderContent } from './styled'
-import { useCoutries } from '../../hook/useCoutries'
+import { useCountries } from '../../hook/useCountries'
 
 export const Header = () => {
-  const { isDarkTheme, setIsDarkTheme } = useCoutries()
+  const { isDarkTheme, setIsDarkTheme } = useCountries()
 
   function handleChangeTheme() {
     setIsDarkTheme(!isDarkTheme)
