@@ -1,7 +1,8 @@
 import { ReactNode, createContext, useEffect, useState } from 'react'
 import { CoutriesDataProps } from '../../pages/Home'
+import { api } from '../libs/axios'
 
-interface Coutries {
+export interface Coutries {
   data: CoutriesDataProps[]
   optionValue: string
   setOptionValue: React.Dispatch<React.SetStateAction<string>>
@@ -9,6 +10,7 @@ interface Coutries {
   setInputValue: React.Dispatch<React.SetStateAction<string>>
   isDarkTheme: boolean
   setIsDarkTheme: React.Dispatch<React.SetStateAction<boolean>>
+  getSingleCoutrie: (name: string) => Promise<any>
 }
 
 interface ChildrenContextProps {
@@ -29,6 +31,11 @@ export const CoutriesProvider = ({ children }: ChildrenContextProps) => {
     setData(json)
   }
 
+  async function getSingleCoutrie(name: string) {
+    const response = await api.get(`${name}`)
+    return response.data
+  }
+
   useEffect(() => {
     getApiData()
   }, [])
@@ -43,6 +50,7 @@ export const CoutriesProvider = ({ children }: ChildrenContextProps) => {
         setOptionValue,
         isDarkTheme,
         setIsDarkTheme,
+        getSingleCoutrie,
       }}
     >
       {children}

@@ -9,6 +9,7 @@ export interface CoutriesDataProps {
   population: number
   region: string
   capital: string
+  code: string
 }
 
 export const Home = () => {

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useCoutries } from '../../hook/useCoutries'
 import { Card } from './components/Card'
 import { ListContainer } from './styled'
@@ -26,10 +27,22 @@ export const List = () => {
   return (
     <ListContainer className="container">
       {inputValue.length > 0
-        ? inputFilter.map((item) => <Card key={item.id} data={item} />)
+        ? inputFilter.map((item) => (
+            <Link key={item.id} to={`/SingleCard/${item.name}`}>
+              <Card key={item.id} data={item} />
+            </Link>
+          ))
         : isOptionValid(optionValue)
-        ? filterListOfRegions.map((item) => <Card key={item.id} data={item} />)
-        : data.map((item) => <Card key={item.id} data={item} />)}
+        ? filterListOfRegions.map((item) => (
+            <Link key={item.id} to={`/SingleCard/${item.name}`}>
+              <Card key={item.id} data={item} />
+            </Link>
+          ))
+        : data.map((item) => (
+            <Link key={item.id} to={`/SingleCard/${item.name}`}>
+              <Card key={item.id} data={item} />
+            </Link>
+          ))}
     </ListContainer>
   )
 }

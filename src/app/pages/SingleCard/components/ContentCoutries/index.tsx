@@ -1,3 +1,4 @@
+import { SinglePostProps } from '../..'
 import {
   BannerContent,
   ContentContainer,
@@ -8,7 +9,13 @@ import {
   Badge,
 } from './styled'
 
-export const ContentCoutries = () => {
+interface CoutrieCard {
+  coutrie: SinglePostProps
+}
+
+export const ContentCoutries = ({ coutrie }: CoutrieCard) => {
+  console.log(coutrie)
+
   return (
     <ContentContainer>
       <BannerContent>
@@ -27,6 +34,7 @@ export const ContentCoutries = () => {
               </li>
               <li>
                 <span>Region:</span>
+                <p>{coutrie.name}</p>
               </li>
               <li>
                 <span>Sub Region:</span>
