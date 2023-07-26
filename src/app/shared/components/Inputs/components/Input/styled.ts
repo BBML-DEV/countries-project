@@ -29,4 +29,12 @@ export const InputTextContainer = styled.div`
   input:focus {
     outline: none;
   }
+
+  @media (max-width: 820px) {
+    width: 90%;
+  }
+
+  @media (max-width: 600px) {
+    width: 90%;
+  }
 `

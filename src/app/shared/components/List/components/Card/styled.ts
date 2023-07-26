@@ -5,6 +5,14 @@ export const CardContainer = styled.div`
   background-color: ${({ theme }) => theme.colors.elements};
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  @media (max-width: 970px) {
+    width: 100%;
+  }
+
+  @media (max-width: 820px) {
+    width: 100%;
+  }
 `
 export const BannerContainer = styled.div`
   img {
@@ -12,6 +20,24 @@ export const BannerContainer = styled.div`
     height: 10rem;
     overflow: hidden;
     width: 100%;
+  }
+
+  @media (max-width: 970px) {
+    img {
+      height: 10rem;
+    }
+  }
+
+  @media (max-width: 820px) {
+    img {
+      height: 20rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    img {
+      height: 10rem;
+    }
   }
 `
 export const InfoContainer = styled.div`

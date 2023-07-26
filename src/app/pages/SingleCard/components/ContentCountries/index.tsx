@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SinglePostProps } from '../..'
 import { populationFormatted } from '../../../../shared/utils/formatted'
 import {
@@ -5,16 +6,17 @@ import {
   ContentContainer,
   InfoContent,
   InfoDataContainer,
-  InfoCoutriesBadges,
+  InfoCountriesBadges,
   BadgeContainer,
   Badge,
 } from './styled'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
-interface CoutrieCard {
+interface CountrieCard {
   countrie: SinglePostProps
 }
 
-export const ContentCoutries = ({ countrie }: CoutrieCard) => {
+export const ContentCountries = ({ countrie }: CountrieCard) => {
   console.log(countrie.borders)
 
   return (
@@ -48,7 +50,16 @@ export const ContentCoutries = ({ countrie }: CoutrieCard) => {
               </li>
               <li>
                 <span>Capital: </span>
-                <p>{countrie.capital}</p>
+                <p>
+                  {countrie.capital ? (
+                    countrie.capital
+                  ) : (
+                    <FontAwesomeIcon
+                      icon={faXmark}
+                      style={{ color: '#ff0000' }}
+                    />
+                  )}
+                </p>
               </li>
             </ul>
           </div>
@@ -60,10 +71,16 @@ export const ContentCoutries = ({ countrie }: CoutrieCard) => {
               </li>
               <li>
                 <span>Currencies:</span>
-                {countrie.currencies &&
+                {countrie.currencies ? (
                   countrie.currencies.map((currency) => (
                     <p key={currency.code}>{currency.code}</p>
-                  ))}
+                  ))
+                ) : (
+                  <FontAwesomeIcon
+                    icon={faXmark}
+                    style={{ color: '#ff0000' }}
+                  />
+                )}
               </li>
               <li>
                 <span>Languages:</span>
@@ -75,16 +92,18 @@ export const ContentCoutries = ({ countrie }: CoutrieCard) => {
             </ul>
           </div>
         </InfoDataContainer>
-        <InfoCoutriesBadges>
+        <InfoCountriesBadges>
           <h3>Border Countries: </h3>
           <BadgeContainer>
-            {countrie.borders
-              ? countrie.borders.map((content) => (
-                  <Badge key={content}>{content}</Badge>
-                ))
-              : null}
+            {countrie.borders ? (
+              countrie.borders.map((content) => (
+                <Badge key={content}>{content}</Badge>
+              ))
+            ) : (
+              <FontAwesomeIcon icon={faXmark} style={{ color: '#ff0000' }} />
+            )}
           </BadgeContainer>
-        </InfoCoutriesBadges>
+        </InfoCountriesBadges>
       </InfoContent>
     </ContentContainer>
   )

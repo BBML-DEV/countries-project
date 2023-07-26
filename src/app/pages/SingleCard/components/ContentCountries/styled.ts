@@ -5,6 +5,19 @@ export const ContentContainer = styled.section`
   flex-direction: row;
   gap: 10%;
   justify-content: space-between;
+
+  @media (max-width: 1160px) {
+    background-color: red;
+  }
+
+  @media (max-width: 970px) {
+  }
+
+  @media (max-width: 820px) {
+  }
+
+  @media (max-width: 600px) {
+  }
 `
 
 export const BannerContent = styled.div`
@@ -51,7 +64,7 @@ export const InfoDataContainer = styled.div`
   }
 `
 
-export const InfoCoutriesBadges = styled.div`
+export const InfoCountriesBadges = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;

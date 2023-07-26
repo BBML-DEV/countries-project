@@ -1,6 +1,8 @@
 import { BannerContainer, CardContainer, InfoContainer } from './styled'
 import { populationFormatted } from '../../../../utils/formatted'
 import { CountriesDataProps } from '../../../../../pages/Home'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark } from '@fortawesome/free-solid-svg-icons'
 
 type CardPostProps = {
   data: CountriesDataProps
@@ -24,7 +26,13 @@ export const Card = ({ data }: CardPostProps) => {
         </div>
         <div>
           <span>Capital:</span>
-          <p>{data.capital}</p>
+          <p>
+            {data.capital ? (
+              data.capital
+            ) : (
+              <FontAwesomeIcon icon={faXmark} style={{ color: '#ff0000' }} />
+            )}
+          </p>
         </div>
       </InfoContainer>
     </CardContainer>

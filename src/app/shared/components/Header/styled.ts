@@ -3,6 +3,7 @@ import { styled } from 'styled-components'
 export const HeaderContainer = styled.header`
   width: 100%;
   padding: 2rem 0rem;
+  position: fixed;
   background-color: ${({ theme }) => theme.colors.elements};
   -moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
@@ -32,6 +33,16 @@ export const HeaderContent = styled.div`
     span {
       font-size: ${({ theme }) => theme.fontSize.defailtPage};
       font-weight: 600;
+    }
+  }
+
+  @media (max-width: 600px) {
+    button {
+      width: 110px;
+      span {
+        font-size: ${({ theme }) => theme.fontSize.homeItens};
+        font-weight: 600;
+      }
     }
   }
 `

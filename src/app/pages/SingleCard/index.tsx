@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { ButtonBack } from './components/ButtonBack'
-import { ContentCoutries } from './components/ContentCoutries'
+import { ContentCountries } from './components/ContentCountries'
 import { SingleCardContainer } from './styled'
 import { useCallback, useState, useEffect } from 'react'
 import { useCountries } from '../../shared/hook/useCountries'
@@ -40,7 +40,7 @@ export const SingleCard = () => {
   return (
     <SingleCardContainer className="container">
       <ButtonBack />
-      <ContentCoutries countrie={countrieCardInfo} />
+      <ContentCountries countrie={countrieCardInfo} />
     </SingleCardContainer>
   )
 }

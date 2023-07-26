@@ -5,5 +5,18 @@ export const InputsContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 0;
+  padding-top: 10rem;
+  padding-bottom: 2rem;
+
+  @media (max-width: 820px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
 `
