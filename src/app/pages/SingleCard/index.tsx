@@ -11,9 +11,9 @@ export interface SinglePostProps extends CountriesDataProps {
   nativeName: string
   subregion: string
   topLevelDomain: string[]
-  currencies: []
-  borders: []
-  languages: []
+  currencies: { code: string }[] | null
+  languages: { name: string; iso639_2: string }[] | null
+  borders: string[] | null
 }
 
 export const SingleCard = () => {
@@ -26,9 +26,10 @@ export const SingleCard = () => {
   const { getSingleCountrie } = useCountries() as unknown as Countries
 
   const getCountrie = useCallback(async () => {
-    const countrie = await getSingleCountrie(alpha2Code)
-
-    setCountrieCardInfo(countrie)
+    if (alpha2Code) {
+      const countrie = await getSingleCountrie(alpha2Code)
+      setCountrieCardInfo(countrie)
+    }
   }, [getSingleCountrie, alpha2Code])
 
   useEffect(() => {

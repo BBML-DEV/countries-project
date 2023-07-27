@@ -10,16 +10,18 @@ export const defaultTheme = {
     homeItens: '14px',
     defailtPage: '16px',
   },
-} as const
+}
 
 export const darkTheme = {
   colors: {
     elements: '#2b3945',
     background: '#202c37',
     text: '	#ffffff',
+    input: '',
+    white: '',
   },
   fontSize: {
     homeItens: '14px',
     defailtPage: '16px',
   },
-} as const
+}
