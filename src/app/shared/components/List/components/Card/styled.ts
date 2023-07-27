@@ -36,7 +36,7 @@ export const BannerContainer = styled.div`
 
   @media (max-width: 600px) {
     img {
-      height: 10rem;
+      height: 15rem;
     }
   }
 `

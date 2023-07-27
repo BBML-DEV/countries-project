@@ -5,18 +5,12 @@ export const ContentContainer = styled.section`
   flex-direction: row;
   gap: 10%;
   justify-content: space-between;
-
-  @media (max-width: 1160px) {
-    background-color: red;
-  }
-
-  @media (max-width: 970px) {
-  }
+  padding-bottom: 5rem;
 
   @media (max-width: 820px) {
-  }
-
-  @media (max-width: 600px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
   }
 `
 
@@ -33,6 +27,16 @@ export const BannerContent = styled.div`
     height: 100%;
     width: 100%;
   }
+
+  @media (max-width: 820px) {
+    width: 100%;
+    height: 300px;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 256px;
+  }
 `
 
 export const InfoContent = styled.div`
@@ -42,6 +46,10 @@ export const InfoContent = styled.div`
   gap: 2rem;
   width: 45%;
 
+  @media (max-width: 820px) {
+    width: 100%;
+  }
+
   h1 {
     color: ${({ theme }) => theme.colors.text};
   }
@@ -50,6 +58,11 @@ export const InfoDataContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 0.5rem;
+  }
 
   ul li {
     padding: 0.3rem 0rem;
