@@ -4,7 +4,7 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { useCountries } from '../../../../hook/useCountries'
 
 export const Input = () => {
-  const getInputTextValue = ({ target }: any) => {
+  const getInputTextValue = ({ target }: { target: HTMLInputElement }) => {
     setInputValue(target.value)
   }
 

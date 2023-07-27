@@ -17,8 +17,6 @@ interface CountrieCard {
 }
 
 export const ContentCountries = ({ countrie }: CountrieCard) => {
-  console.log(countrie.borders)
-
   return (
     <ContentContainer>
       <BannerContent>
